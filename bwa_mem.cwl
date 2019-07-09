@@ -1,7 +1,8 @@
+#!/usr/bin/env cwl-runner
+
 class: CommandLineTool
 cwlVersion: v1.0
-$namespaces:
-  sbg: 'https://www.sevenbridges.com/'
+
 id: bwa_mem_0_7_15
 baseCommand:
   - bwa
@@ -61,9 +62,6 @@ arguments:
     prefix: '-w'
     valueFrom: '200'
 requirements:
-  - class: ResourceRequirement
-    ramMin: 10000
-    coresMin: 8
   - class: DockerRequirement
     dockerPull: 'biocontainers/bwa:0.7.15'
   - class: InlineJavascriptRequirement
